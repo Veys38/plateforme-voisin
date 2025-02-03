@@ -17,11 +17,6 @@ public class Review {
     @Getter
     private Long id;
 
-    @Getter
-    @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
-    private User user;
-
     @Column(nullable = false)
     @Getter @Setter
     private Rate rate;
@@ -34,4 +29,12 @@ public class Review {
     @CreationTimestamp
     @Getter
     private LocalDateTime createdAt;
+
+    @Getter @Setter
+    @ManyToOne(fetch = FetchType.EAGER,cascade = {CascadeType.PERSIST})
+    private User reviewFrom;
+
+    @Getter @Setter
+    @ManyToOne(fetch = FetchType.EAGER,cascade = {CascadeType.PERSIST})
+    private User reviewTo;
 }

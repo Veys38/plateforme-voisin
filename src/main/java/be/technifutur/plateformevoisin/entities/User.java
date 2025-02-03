@@ -46,35 +46,4 @@ public class User {
     @Column
     @Getter @Setter
     private boolean isActive;
-
-    @ManyToMany
-    private List<Task> taskListing;
-
-    public User() {
-        taskListing = new ArrayList<>();
-    }
-
-    public User(String firstName, String lastName, String email, String password, Address address, int phoneNumber, String profilePicture, boolean isActive) {
-        this();
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.password = password;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
-        this.profilePicture = profilePicture;
-        this.isActive = isActive;
-    }
-
-    public List<Task> getTaskListing() {
-        return List.copyOf(taskListing);
-    }
-
-    public void addTaskListing(Task task) {
-        taskListing.add(task);
-    }
-
-    public void removeTaskListing(Task task) {
-        taskListing.remove(task);
-    }
 }

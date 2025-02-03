@@ -39,6 +39,6 @@ public class Task {
     @Getter
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id", nullable = false)
-    private User taskAssignee;
+    private User createdBy;
 
 }
