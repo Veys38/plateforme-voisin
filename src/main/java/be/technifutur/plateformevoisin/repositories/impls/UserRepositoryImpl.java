@@ -2,11 +2,15 @@ package be.technifutur.plateformevoisin.repositories.impls;
 
 import be.technifutur.plateformevoisin.entities.User;
 import be.technifutur.plateformevoisin.repositories.UserRepository;
+import jakarta.enterprise.context.SessionScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Query;
 
-public class UserRepositoryImpl extends BaseRepositoryImpl<User, Long> implements UserRepository {
+import java.io.Serializable;
+
+@SessionScoped
+public class UserRepositoryImpl extends BaseRepositoryImpl<User, Long> implements UserRepository, Serializable {
 
 
     public UserRepositoryImpl() {

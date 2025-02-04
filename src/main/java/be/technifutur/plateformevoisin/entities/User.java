@@ -33,6 +33,7 @@ public class User {
     private String password;
 
     @Embedded
+    @Getter @Setter
     private Address address;
 
     @Column(nullable = false, unique = true, length = 10)
@@ -46,4 +47,14 @@ public class User {
     @Column
     @Getter @Setter
     private boolean isActive;
+
+    public User(String firstName, String lastName, String email, String password, Address address, int phoneNumber, String profilePicture) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.email = email;
+        this.password = password;
+        this.address = address;
+        this.phoneNumber = phoneNumber;
+        this.profilePicture = profilePicture;
+    }
 }

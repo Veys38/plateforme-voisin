@@ -30,7 +30,9 @@ public class UserServiceImpl implements UserService, Serializable {
         }
         String hashedPassword = BCrypt.hashpw(user.getPassword(), BCrypt.gensalt());
         user.setPassword(hashedPassword);
+        user.setActive(true);
         userRepository.save(user);
+
     }
 
     @Override
