@@ -27,6 +27,10 @@ public class Task {
     @Getter @Setter
     private String description;
 
+    @Column
+    @Getter @Setter
+    private String taskPicture;
+
     @Column(nullable = false)
     @Getter @Setter
     private Status status;
