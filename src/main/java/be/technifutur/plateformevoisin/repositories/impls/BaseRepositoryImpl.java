@@ -1,6 +1,7 @@
 package be.technifutur.plateformevoisin.repositories.impls;
 
 import be.technifutur.plateformevoisin.repositories.BaseRepository;
+import be.technifutur.plateformevoisin.utils.EmfFactoryUtils;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -14,7 +15,7 @@ public abstract class BaseRepositoryImpl<TEntity, TId> implements BaseRepository
     private final Class<TEntity> entityClass;
 
     protected BaseRepositoryImpl(Class<TEntity> entityClass) {
-        this.emf = Persistence.createEntityManagerFactory("plateforme-voisins");
+        this.emf = EmfFactoryUtils.getEmfFactory();
         this.entityClass = entityClass;
     }
 

@@ -16,11 +16,11 @@ public class UserServiceImpl implements UserService, Serializable {
     @Inject
     private UserRepository userRepository;
 
-    public UserServiceImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    public UserServiceImpl() {
     }
 
-    public UserServiceImpl() {
+    public UserServiceImpl(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
     @Override

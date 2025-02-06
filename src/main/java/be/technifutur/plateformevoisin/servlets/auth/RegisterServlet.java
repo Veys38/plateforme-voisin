@@ -14,7 +14,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet("/register")
+@WebServlet(value = "/register",loadOnStartup = 1)
 public class RegisterServlet extends HttpServlet {
 
     @Inject

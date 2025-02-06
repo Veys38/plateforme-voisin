@@ -4,7 +4,6 @@ import be.technifutur.plateformevoisin.entities.User;
 import be.technifutur.plateformevoisin.repositories.UserRepository;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Query;
 
 import java.io.Serializable;
