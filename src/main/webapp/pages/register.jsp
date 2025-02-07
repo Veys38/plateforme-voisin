@@ -3,34 +3,66 @@
 <html>
 <head>
     <title>Register</title>
+    <%@include file="/import/import.jsp" %>
 </head>
 <body>
-    <h1>Fuck You !</h1>
+<div id="wrapper">
+    <h1>Registration Form</h1>
     <main>
-        <form action="${pageContext.request.contextPath}/register" method="post">
+        <form action="${pageContext.request.contextPath}/register" method="POST">
             <fieldset>
-                <legend>Register</legend>
+                <legend>Your details</legend>
+                <div>
+                    <label for="firstname">First Name : </label>
+                    <input autofocus type="text" id="firstname" name="firstName">
+                </div>
+                <div>
+                    <label for="lastname">Last Name : </label>
+                    <input type="text" id="lastname" name="lastName">
+                </div>
+                <div>
+                    <label for="email">E-mail : </label>
+                    <input type="text" id="email" name="email">
+                </div>
+                <div>
+                    <label for="password">Password :</label>
+                    <input type="password" id="password" name="password">
+                </div>
+                <div>
+                    <label for="phonebumber">Phone Number :</label>
+                    <input type="text" id="phonebumber" name="phoneNumber">
+                </div>
+                <fieldset>
+                    <legend>Addess</legend>
                     <div>
-                        <label for="firstname">First Name : </label>
-                        <input type="text" id="firstname" name="firstname">
+                        <input placeholder="Street" type="text" name="street">
                     </div>
                     <div>
-                        <label for="lastname">Last Name : </label>
-                        <input type="text" id="lastname" name="lastname">
+                        <input placeholder="Number" type="text" name="number">
                     </div>
                     <div>
-                        <label for="email">E-mail : </label>
-                        <input type="text" id="email" name="email">
+                        <input placeholder="Mailbox" type="text" name="mailbox">
                     </div>
                     <div>
-                        <label for="password">Password :</label>
-                        <input type="password" id="password" name="password">
+                        <input placeholder="City" type="text" name="city">
                     </div>
+                    <div>
+                        <input placeholder="State" type="text" name="state">
+                    </div>
+                    <div>
+                        <input class="dit" placeholder="Zip" type="text" name="zip">
+                    </div>
+                </fieldset>
+                <div class="clickHere2">
                     <button type="submit">Click the fucking here mate !</button>
+                </div>
+
             </fieldset>
         </form>
 
     </main>
+</div>
+
 
 </body>
 </html>

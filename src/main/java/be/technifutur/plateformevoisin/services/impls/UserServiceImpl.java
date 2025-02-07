@@ -2,8 +2,10 @@ package be.technifutur.plateformevoisin.services.impls;
 
 import be.technifutur.plateformevoisin.entities.User;
 import be.technifutur.plateformevoisin.repositories.UserRepository;
+import be.technifutur.plateformevoisin.repositories.impls.UserRepositoryImpl;
 import be.technifutur.plateformevoisin.services.UserService;
 import jakarta.enterprise.context.SessionScoped;
+import jakarta.enterprise.inject.spi.CDI;
 import jakarta.inject.Inject;
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -17,10 +19,8 @@ public class UserServiceImpl implements UserService, Serializable {
     private UserRepository userRepository;
 
     public UserServiceImpl() {
-    }
-
-    public UserServiceImpl(UserRepository userRepository) {
-        this.userRepository = userRepository;
+        userRepository = CDI.current().select(UserRepositoryImpl.class).get();
+        System.out.println("Repo = " + userRepository);
     }
 
     @Override
@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService, Serializable {
         if (user==null) {
             throw new IllegalArgumentException("The e-mail does not exist !");
         }
-        if (!BCrypt.checkpw(password, email)){
+        if (!BCrypt.checkpw(password, user.getPassword())) {
             throw new IllegalArgumentException("The password is wrong !");
         }
         return user;

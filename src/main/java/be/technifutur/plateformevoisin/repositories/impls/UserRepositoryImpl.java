@@ -4,6 +4,7 @@ import be.technifutur.plateformevoisin.entities.User;
 import be.technifutur.plateformevoisin.repositories.UserRepository;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.NoResultException;
 import jakarta.persistence.Query;
 
 import java.io.Serializable;
@@ -28,9 +29,11 @@ public class UserRepositoryImpl extends BaseRepositoryImpl<User, Long> implement
     @Override
     public User findByEmail(String email) {
         try(EntityManager em = emf.createEntityManager()) {
-            Query query = em.createQuery("SELECT u FROM User u WHERE u.email = :email");
+            Query query = em.createQuery("SELECT u FROM User u WHERE LOWER(u.email) = LOWER(:email)");
             query.setParameter("email", email);
             return (User) query.getSingleResult();
+        }catch (NoResultException e){
+            return null;
         }
 
     }

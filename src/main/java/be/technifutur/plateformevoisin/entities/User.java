@@ -38,7 +38,7 @@ public class User {
 
     @Column(nullable = false, unique = true, length = 10)
     @Getter @Setter
-    private int phoneNumber;
+    private String phoneNumber;
 
     @Column
     @Getter @Setter
@@ -48,13 +48,14 @@ public class User {
     @Getter @Setter
     private boolean isActive;
 
-    public User(String firstName, String lastName, String email, String password, Address address, int phoneNumber, String profilePicture) {
+    public User(String firstName, String lastName, String email, String password, String phoneNumber, Address address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.password = password;
-        this.address = address;
         this.phoneNumber = phoneNumber;
-        this.profilePicture = profilePicture;
+        this.address = address;
+
+
     }
 }

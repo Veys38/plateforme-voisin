@@ -1,0 +1,57 @@
+body {
+    background-color: #dadada;
+    font-family: Candara;
+}
+
+#wrapper {
+    max-width: 500px;
+    background-color: aliceblue;
+    margin: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid grey;
+}
+
+h1, p {
+    text-align: center;
+}
+
+.log {
+    margin-bottom: 5px;
+}
+
+a{
+    border: 1px solid grey;
+    padding: 3px 10px;
+
+    text-decoration: none;
+    color: black;
+}
+
+.log a:hover {
+    color: cadetblue;
+}
+
+input {
+    display: flex;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.clickHere2 button{
+    background-color: #dadada;
+    border: 1px solid gray;
+    background-color: #efefef;
+    border-radius: 2px;
+}
+
+.clickHere2 button:active {
+    background-color: aquamarine;
+}
+
+.clickHere2 {
+    margin-top: 10px;
+    justify-self: end;
+}
