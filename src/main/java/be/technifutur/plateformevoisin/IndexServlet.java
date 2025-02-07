@@ -2,6 +2,7 @@ package be.technifutur.plateformevoisin;
 
 import java.io.*;
 
+import be.technifutur.plateformevoisin.entities.User;
 import be.technifutur.plateformevoisin.services.UserService;
 import jakarta.inject.Inject;
 import jakarta.servlet.ServletException;
@@ -17,8 +18,7 @@ public class IndexServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        try{
-            user
-        }
+        req.getSession().invalidate();
+        resp.sendRedirect("/");
     }
 }

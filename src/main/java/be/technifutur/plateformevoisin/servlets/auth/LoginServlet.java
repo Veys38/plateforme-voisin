@@ -28,6 +28,7 @@ public class LoginServlet extends HttpServlet {
         String password = req.getParameter("password");
         try{
             userService.LoginUser(email, password);
+            req.getSession(true).setAttribute("currentUser", email);
             resp.sendRedirect("/");
         }catch (Exception e){
             System.out.println(e.getMessage());

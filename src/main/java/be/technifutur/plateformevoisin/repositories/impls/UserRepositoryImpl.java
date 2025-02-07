@@ -2,6 +2,7 @@ package be.technifutur.plateformevoisin.repositories.impls;
 
 import be.technifutur.plateformevoisin.entities.User;
 import be.technifutur.plateformevoisin.repositories.UserRepository;
+import jakarta.annotation.ManagedBean;
 import jakarta.enterprise.context.SessionScoped;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;

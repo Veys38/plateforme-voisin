@@ -1,6 +1,8 @@
 body {
     background-color: #dadada;
     font-family: Candara;
+    padding: 0;
+    margin: 0;
 }
 
 #wrapper {
@@ -14,6 +16,27 @@ body {
     border: 1px solid grey;
 }
 
+header {
+    background-color: #ffffff;
+    border: 1px solid grey;
+    margin-bottom: 10px;
+}
+
+
+.bar-haut {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 0;
+}
+
+.bar-haut li{
+    list-style-type: none;
+}
+
+.colorSpan {
+    color: #0088ff;
+}
+
 h1, p {
     text-align: center;
 }
@@ -25,7 +48,7 @@ h1, p {
 a{
     border: 1px solid grey;
     padding: 3px 10px;
-
+    background-color: white;
     text-decoration: none;
     color: black;
 }
@@ -55,3 +78,6 @@ input {
     margin-top: 10px;
     justify-self: end;
 }
+
+
+
