@@ -29,7 +29,7 @@ public class LoginServlet extends HttpServlet {
         try{
             userService.LoginUser(email, password);
             req.getSession(true).setAttribute("currentUser", email);
-            resp.sendRedirect("/");
+            resp.sendRedirect("/pages/mainWeb.jsp");
         }catch (Exception e){
             System.out.println(e.getMessage());
             resp.sendError(500);
