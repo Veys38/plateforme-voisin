@@ -9,6 +9,7 @@
 <body>
 
   <%@include file="/layout/header.jsp" %>
+  <%@include file="/layout/section.jsp" %>
 
   <div id="wrapper">
     <h1><%= "Plateforme Voisins!" %></h1>

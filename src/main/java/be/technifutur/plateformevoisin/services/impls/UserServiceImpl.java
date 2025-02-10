@@ -20,7 +20,11 @@ public class UserServiceImpl implements UserService, Serializable {
 
     public UserServiceImpl() {
         userRepository = CDI.current().select(UserRepositoryImpl.class).get();
-        System.out.println("Repo = " + userRepository);
+        if (userRepository == null) {
+            System.out.println("UserRepository is NULL");
+        } else {
+            System.out.println("UserRepository is injected correctly");
+        }
     }
 
     @Override
